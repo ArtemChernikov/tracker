@@ -14,7 +14,7 @@ public class Matches {
             int matches = Integer.parseInt(input.nextLine());
 
             /* Остальная логика игры. */
-            if (matches <= 3 && matches <= count) {
+            if (matches <= 3 && matches > 0 && matches <= count) {
                 turn = !turn;
                 count -= matches;
                 System.out.println("Спичек осталось: " + count);
