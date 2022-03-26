@@ -9,7 +9,7 @@ public class CreateAction implements UserAction {
 
     @Override
     public String name() {
-        return "Create";
+        return "Add new item";
     }
 
     @Override
@@ -18,6 +18,7 @@ public class CreateAction implements UserAction {
         String name = input.askStr("Enter name: ");
         Item item = new Item(name);
         tracker.add(item);
+        System.out.println("Добавленная заявка: " + item);
         return true;
     }
 }
