@@ -8,6 +8,7 @@ import java.util.List;
 
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.Assert.assertNotEquals;
 
 public class OrderConvertTest {
 
@@ -17,5 +18,14 @@ public class OrderConvertTest {
         orders.add(new Order("3sfe", "Dress"));
         HashMap<String, Order> map = OrderConvert.process(orders);
         assertThat(map.get("3sfe"), is(new Order("3sfe", "Dress")));
+    }
+
+    @Test
+    public void whenDuplicateOrders() {
+        List<Order> orders = new ArrayList<>();
+        orders.add(new Order("3sfe", "Dress"));
+        orders.add(new Order("3sfe", "Dress"));
+        HashMap<String, Order> map = OrderConvert.process(orders);
+        assertNotEquals(map.size(), orders.size());
     }
 }
