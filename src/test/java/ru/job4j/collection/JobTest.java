@@ -9,7 +9,6 @@ import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.lessThan;
 import static org.hamcrest.Matchers.greaterThan;
 
 public class JobTest {
@@ -19,27 +18,27 @@ public class JobTest {
         Comparator<Job> cmpNamePriority = new CompareDescByName().thenComparing(new CompareDescByPriority());
         int rsl = cmpNamePriority.compare(
                 new Job("Impl task", 0),
-                new Job("Fix bug", 1)
+                new Job("Impl task", 1)
         );
-        assertThat(rsl, lessThan(0));
+        assertThat(rsl, greaterThan(0));
     }
 
     @Test
     public void whenComparatorAscByNameAndPriority() {
         Comparator<Job> comparator = new CompareAscByName().thenComparing(new CompareAscByPriority());
         int rsl = comparator.compare(
-                new Job("Fix Bug", 1),
-                new Job("Impl task", 0)
+                new Job("Fix Bug", 5),
+                new Job("Fix Bug", 1)
         );
-        assertThat(rsl, lessThan(0));
+        assertThat(rsl, greaterThan(0));
     }
 
     @Test
     public void whenComparatorAscByNameAndDescByPriority() {
         Comparator<Job> comparator = new CompareAscByName().thenComparing(new CompareDescByPriority());
         int rsl = comparator.compare(
-                new Job("Fix Bug", 1),
-                new Job("Fimpl task", 0)
+                new Job("Fix Bug", 3),
+                new Job("Fix Bug", 5)
         );
         assertThat(rsl, greaterThan(0));
     }
@@ -48,10 +47,10 @@ public class JobTest {
     public void whenComparatorDescByNameAndAscByPriority() {
         Comparator<Job> comparator = new CompareDescByName().thenComparing(new CompareAscByPriority());
         int rsl = comparator.compare(
-                new Job("Fix Bug", 1),
-                new Job("Fimpl task", 0)
+                new Job("Fix Bug", 3),
+                new Job("Fix Bug", 1)
         );
-        assertThat(rsl, lessThan(0));
+        assertThat(rsl, greaterThan(0));
     }
 
     @Test
