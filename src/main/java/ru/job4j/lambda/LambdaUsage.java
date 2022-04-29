@@ -9,13 +9,13 @@ import java.util.List;
  * для сортировки списка по длине, по убыванию
  *
  * @author ARTEM CHERNIKOV
- * @version 1.0
+ * @version 1.1
  */
 public class LambdaUsage {
     public static void main(String[] args) {
         List<String> strings = Arrays.asList("eeeee", "a", "ccc", "dddd", "bb");
         Comparator<String> comparator = (left, right) -> {
-            System.out.println("compare - " + right.length() + " : " + left.length());
+            System.out.println("compare - " + left.length() + " : " + right.length());
             return Integer.compare(right.length(), left.length());
         };
         strings.sort(comparator);
