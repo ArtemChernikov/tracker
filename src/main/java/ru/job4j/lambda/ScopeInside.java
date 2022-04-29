@@ -6,14 +6,13 @@ import java.util.function.Supplier;
  * Класс описывает подсчет и вывод суммы чисел в массиве в консоль
  *
  * @author ARTEM CHERNIKOV
- * @version 1.0
+ * @version 1.1
  */
 public class ScopeInside {
     public static void main(String[] args) {
         int[] number = {1, 2, 3};
         int total = 0;
-        for (int i = 0; i < number.length; i++) {
-            int num = number[i];
+        for (int num : number) {
             int finalTotal = total;
             total = add(
                     () -> finalTotal + num
