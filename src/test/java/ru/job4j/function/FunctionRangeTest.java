@@ -26,8 +26,8 @@ public class FunctionRangeTest {
 
     @Test
     public void whenDemonstrationFunctionThenDemonstrationResults() {
-        List<Double> result = FunctionRange.diapason(3, 6, x -> 2 + Math.pow(x, x) + 2);
-        List<Double> expected = Arrays.asList(31D, 260D, 3129D);
+        List<Double> result = FunctionRange.diapason(3, 6, x -> Math.pow(2, x) + 4);
+        List<Double> expected = Arrays.asList(12D, 20D, 36D);
         assertThat(result, is(expected));
     }
 }
