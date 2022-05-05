@@ -3,7 +3,7 @@ package ru.job4j.stream;
 import java.util.List;
 
 /**
- * Класс описывает применение потоков для работы с коллекциями
+ * Класс описывает применение Stream API для работы с коллекциями
  *
  * @author ARTEM CHERNIKOV
  * @version 1.0

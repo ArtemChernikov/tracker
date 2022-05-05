@@ -5,7 +5,8 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 /**
- * Класс описывает применение потоков для работы с коллекциями
+ * Класс описывает применение Stream API для работы с коллекциями
+ * Используется класс {@link Student}
  *
  * @author ARTEM CHERNIKOV
  * @version 1.0

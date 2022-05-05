@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * Класс описывает применение потоков для работы с коллекциями
+ * Класс описывает применение Stream API для работы с коллекциями
  *
  * @author ARTEM CHERNIKOV
  * @version 1.0
