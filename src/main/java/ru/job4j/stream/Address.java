@@ -6,7 +6,7 @@ import java.util.Objects;
  * Класс модели адреса со свойствами <b>city</b>, <b>street</b>, <b>home</b> и <b>apartment</b>
  *
  * @author ARTEM CHERNIKOV
- * @version 1.0
+ * @version 1.1
  */
 public class Address {
     /**
@@ -39,6 +39,15 @@ public class Address {
         this.street = street;
         this.home = home;
         this.apartment = apartment;
+    }
+
+    /**
+     * Метод получения значения поля {@link Address#city}
+     *
+     * @return - город
+     */
+    public String getCity() {
+        return city;
     }
 
     /**
