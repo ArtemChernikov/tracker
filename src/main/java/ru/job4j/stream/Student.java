@@ -6,7 +6,7 @@ import java.util.Objects;
  * Класс модели студента со свойствами <b>score</b> и <b>surname</b>
  *
  * @author ARTEM CHERNIKOV
- * @version 1.0
+ * @version 1.1
  */
 public class Student {
     /**
@@ -48,7 +48,7 @@ public class Student {
     }
 
     /**
-     * Переопределенный метод, для корректного сравнения объектов
+     * Переопределенный метод {@link Object#equals(Object)}, для корректного сравнения объектов
      *
      * @param o - другой студент
      * @return возвращает true, если объекты равны, false если нет
@@ -67,12 +67,25 @@ public class Student {
     }
 
     /**
-     * Переопределенный метод, для корректного сравнения объектов
+     * Переопределенный метод {@link Object#hashCode()}, для корректного сравнения объектов
      *
      * @return возвращает hashcode объекта
      */
     @Override
     public int hashCode() {
         return Objects.hash(score, surname);
+    }
+
+    /**
+     * Переопределяем метод {@link Object#toString()} для корректного отображения объекта в консоли
+     *
+     * @return - возвращает строку с содержимым объекта
+     */
+    @Override
+    public String toString() {
+        return "Student{"
+                + "score=" + score
+                + ", surname='" + surname + '\''
+                + '}';
     }
 }
