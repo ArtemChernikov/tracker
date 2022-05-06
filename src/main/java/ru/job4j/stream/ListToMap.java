@@ -24,7 +24,6 @@ public class ListToMap {
      * @return - карта {@link LinkedHashMap} студентов
      */
     public static Map<String, Student> convert(List<Student> list) {
-        Map<String, Student> rsl = new LinkedHashMap<>();
         return list.stream()
                 .collect(Collectors.toMap(Student::getSurname,
                         e -> e,
