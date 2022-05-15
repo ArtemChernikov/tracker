@@ -3,7 +3,7 @@ package ru.job4j.bank;
 import java.util.Objects;
 
 /**
- * Класс модели банковского счета со свойствами <b>requisite</b> и <b>balance</b>.
+ * Класс модели банковского счета со свойствами <b>requisite</b> и <b>balance</b>
  * @author ARTEM CHERNIKOV
  * @version 1.0
  */
@@ -14,7 +14,7 @@ public class Account {
     private double balance;
 
     /**
-     * Конструктор - создание нового объекта с определенными значениями.
+     * Конструктор - создание нового объекта с определенными значениями
      * @param requisite - реквизиты
      * @param balance - баланс
      */
