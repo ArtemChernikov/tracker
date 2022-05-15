@@ -7,7 +7,7 @@ import java.util.LinkedList;
  * по принципу FIFO (first in - first out)
  *
  * @author ARTEM CHERNIKOV
- * @version 1.0
+ * @version 1.1
  */
 public class PriorityQueue {
     /**
@@ -23,7 +23,7 @@ public class PriorityQueue {
      * @param task задача которая добавляется в очередь
      */
     public void put(Task task) {
-        int index = 0;
+        var index = 0;
         for (Task element : tasks) {
             if (element.getPriority() > task.getPriority()) {
                 break;
