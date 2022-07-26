@@ -4,7 +4,7 @@ import java.util.List;
 
 public final class SingleTracker {
     private static SingleTracker instance = null;
-    private Tracker tracker = new Tracker();
+    private Store tracker = new MemTracker();
 
     private SingleTracker() {
 
@@ -12,7 +12,7 @@ public final class SingleTracker {
 
     private static SingleTracker getInstance() {
         if (instance == null) {
-             instance = new SingleTracker();
+            instance = new SingleTracker();
         }
         return instance;
     }

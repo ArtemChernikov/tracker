@@ -5,6 +5,9 @@ import java.util.Scanner;
 public class ConsoleInput implements Input {
     private Scanner scanner = new Scanner(System.in);
 
+    public ConsoleInput() {
+    }
+
     @Override
     public String askStr(String question) {
         System.out.print(question);
