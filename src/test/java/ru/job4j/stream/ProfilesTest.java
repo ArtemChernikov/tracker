@@ -1,11 +1,10 @@
 package ru.job4j.stream;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 public class ProfilesTest {
 
@@ -21,7 +20,7 @@ public class ProfilesTest {
         );
         List<Address> result = Profiles.collect(profiles);
         List<Address> expected = Arrays.asList(first, second, third);
-        assertEquals(expected, result);
+        Assertions.assertEquals(expected, result);
     }
 
     @Test
@@ -42,6 +41,6 @@ public class ProfilesTest {
         );
         List<Address> result = Profiles.collectSortWithoutDuplicate(profiles);
         List<Address> expected = Arrays.asList(first, second, third);
-        assertEquals(expected, result);
+        Assertions.assertEquals(expected, result);
     }
 }

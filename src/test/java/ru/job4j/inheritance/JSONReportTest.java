@@ -1,8 +1,7 @@
 package ru.job4j.inheritance;
 
-import org.junit.Test;
-
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class JSONReportTest {
     @Test
@@ -15,7 +14,7 @@ public class JSONReportTest {
         String name = "Report's name";
         String body = "Report's body";
         String result = new JSONReport().generate(name, body);
-        assertEquals(expected, result);
+        Assertions.assertEquals(expected, result);
     }
 
     @Test
@@ -28,6 +27,6 @@ public class JSONReportTest {
         String name = "David Gilmour";
         String body = "Shine On You Crazy Diamond";
         String result = new JSONReport().generate(name, body);
-        assertEquals(expected, result);
+        Assertions.assertEquals(expected, result);
     }
 }

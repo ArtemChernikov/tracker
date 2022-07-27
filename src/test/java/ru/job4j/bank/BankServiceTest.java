@@ -1,11 +1,10 @@
 package ru.job4j.bank;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Optional;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.is;
 
 public class BankServiceTest {
 
@@ -14,7 +13,7 @@ public class BankServiceTest {
         User user = new User("3434", "Petr Arsentev");
         BankService bank = new BankService();
         bank.addUser(user);
-        assertThat(bank.findByPassport("3434"), is(Optional.of(user)));
+        assertEquals(bank.findByPassport("3434"), Optional.of(user));
     }
 
     @Test
@@ -23,7 +22,7 @@ public class BankServiceTest {
         BankService bank = new BankService();
         bank.addUser(user);
         bank.addAccount(user.getPassport(), new Account("5546", 150D));
-        assertThat(Optional.empty(), is(bank.findByRequisite("34", "5546")));
+        assertEquals(Optional.empty(), bank.findByRequisite("34", "5546"));
     }
 
     @Test
@@ -32,7 +31,7 @@ public class BankServiceTest {
         BankService bank = new BankService();
         bank.addUser(user);
         bank.addAccount(user.getPassport(), new Account("5546", 150D));
-        assertThat(bank.findByRequisite("3434", "5546").get().getBalance(), is(150D));
+        assertEquals(bank.findByRequisite("3434", "5546").get().getBalance(), 150D);
     }
 
     @Test
@@ -43,7 +42,7 @@ public class BankServiceTest {
         bank.addAccount(user.getPassport(), new Account("5546", 150D));
         bank.addAccount(user.getPassport(), new Account("113", 50D));
         bank.transferMoney(user.getPassport(), "5546", user.getPassport(), "113", 150D);
-        assertThat(bank.findByRequisite(user.getPassport(), "113").get().getBalance(), is(200D));
+        assertEquals(bank.findByRequisite(user.getPassport(), "113").get().getBalance(), 200D);
     }
 
     @Test
@@ -53,6 +52,6 @@ public class BankServiceTest {
         bank.addUser(user);
         bank.addAccount(user.getPassport(), new Account("1111", 150D));
         bank.addAccount(user.getPassport(), new Account("1122", 300D));
-        assertThat(bank.findByRequisite("3434", "1122").get().getBalance(), is(300D));
+        assertEquals(bank.findByRequisite("3434", "1122").get().getBalance(), 300D);
     }
 }

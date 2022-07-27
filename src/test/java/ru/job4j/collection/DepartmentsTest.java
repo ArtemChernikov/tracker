@@ -1,12 +1,11 @@
 package ru.job4j.collection;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Arrays;
 import java.util.List;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.is;
 
 public class DepartmentsTest {
 
@@ -15,7 +14,7 @@ public class DepartmentsTest {
         List<String> input = Arrays.asList("k1/sk1", "k2/sk1");
         List<String> expect = List.of("k1", "k1/sk1", "k2", "k2/sk1");
         List<String> result = Departments.fillGaps(input);
-        assertThat(result, is(expect));
+        assertEquals(result, expect);
     }
 
     @Test
@@ -23,7 +22,7 @@ public class DepartmentsTest {
         List<String> input = Arrays.asList("k1", "k1/sk1");
         List<String> expect = List.of("k1", "k1/sk1");
         List<String> result = Departments.fillGaps(input);
-        assertThat(result, is(expect));
+        assertEquals(result, expect);
     }
 
     @Test
@@ -51,7 +50,7 @@ public class DepartmentsTest {
                 "K2/SK1/SSK2"
         );
         Departments.sortAsc(input);
-        assertThat(input, is(expect));
+        assertEquals(input, expect);
     }
 
     @Test
@@ -73,7 +72,7 @@ public class DepartmentsTest {
                 "K2/SK1/SSK2"
         );
         Departments.sortAsc(input);
-        assertThat(input, is(expect));
+        assertEquals(input, expect);
     }
 
     @Test
@@ -101,7 +100,7 @@ public class DepartmentsTest {
                 "K1/SK2"
         );
         Departments.sortDesc(input);
-        assertThat(input, is(expect));
+        assertEquals(input, expect);
     }
 
     @Test
@@ -125,6 +124,6 @@ public class DepartmentsTest {
                 "K1/SK2"
         );
         Departments.sortDesc(input);
-        assertThat(input, is(expect));
+        assertEquals(input, expect);
     }
 }

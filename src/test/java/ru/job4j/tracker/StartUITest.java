@@ -1,12 +1,12 @@
 package ru.job4j.tracker;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertNull;
 
 public class StartUITest {
 
@@ -46,7 +46,7 @@ public class StartUITest {
         );
         List<UserAction> actions = List.of(new DeleteAction(out), new Exit(out));
         new StartUI(out).init(in, tracker, actions);
-        assertNull(tracker.findById(item.getId()));
+        Assertions.assertNull(tracker.findById(item.getId()));
     }
 
     @Test

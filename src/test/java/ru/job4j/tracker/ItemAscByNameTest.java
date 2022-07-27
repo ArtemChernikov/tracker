@@ -1,13 +1,12 @@
 package ru.job4j.tracker;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.is;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ItemAscByNameTest {
 
@@ -22,6 +21,6 @@ public class ItemAscByNameTest {
         list.add(item3);
         Collections.sort(list, new ItemAscByName());
         List<Item> expected = List.of(item3, item1, item2);
-        assertThat(list, is(expected));
+        assertEquals(list, expected);
     }
 }
