@@ -75,30 +75,16 @@ public class SqlTrackerTest {
     @Test
     public void whenFindAllItems() {
         SqlTracker tracker = new SqlTracker(connection);
-        Item item1 = new Item("item");
-        Item item2 = new Item("item");
-        Item item3 = new Item("item");
-        Item item4 = new Item("item");
-        tracker.add(item1);
-        tracker.add(item2);
-        tracker.add(item3);
-        tracker.add(item4);
-        List<Item> expected = List.of(item1, item2, item3, item4);
+        List<Item> expected = List.of(tracker.add(new Item("item")), tracker.add(new Item("item")),
+                tracker.add(new Item("item")), tracker.add(new Item("item")));
         assertEquals(expected, tracker.findAll());
     }
 
     @Test
     public void whenFindByNameItems() {
         SqlTracker tracker = new SqlTracker(connection);
-        Item item1 = new Item("item1");
-        Item item2 = new Item("item1");
-        Item item3 = new Item("item2");
-        Item item4 = new Item("item2");
-        tracker.add(item1);
-        tracker.add(item2);
-        tracker.add(item3);
-        tracker.add(item4);
-        List<Item> expected = List.of(item1, item2);
+        tracker.add(new Item("item2"));
+        List<Item> expected = List.of(tracker.add(new Item("item1")), tracker.add(new Item("item1")));
         assertEquals(expected, tracker.findByName("item1"));
     }
 
