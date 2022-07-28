@@ -58,20 +58,16 @@ public class SqlTrackerTest {
     @Test
     public void whenReplaceItem() {
         SqlTracker tracker = new SqlTracker(connection);
-        Item item = new Item("item");
+        Item item = tracker.add(new Item("item"));
         Item newItem = new Item("newItem");
-        tracker.add(item);
-        System.out.println(item.getId());
-        newItem.setId(item.getId());
         tracker.replace(item.getId(), newItem);
-        assertEquals(tracker.findById(newItem.getId()), newItem);
+        assertEquals(tracker.findById(item.getId()).getName(), newItem.getName());
     }
 
     @Test
     public void whenDeleteItem() {
         SqlTracker tracker = new SqlTracker(connection);
-        Item item = new Item("item");
-        tracker.add(item);
+        Item item = tracker.add(new Item("item"));
         tracker.delete(item.getId());
         assertNull(tracker.findById(item.getId()));
     }
@@ -109,10 +105,8 @@ public class SqlTrackerTest {
     @Test
     public void whenFindByIdItem() {
         SqlTracker tracker = new SqlTracker(connection);
-        Item item1 = new Item("item1");
-        Item item2 = new Item("item1");
-        tracker.add(item1);
-        tracker.add(item2);
+        Item item1 = tracker.add(new Item("item1"));
+        Item item2 = tracker.add(new Item("item1"));
         assertEquals(item1, tracker.findById(item1.getId()));
     }
 }
