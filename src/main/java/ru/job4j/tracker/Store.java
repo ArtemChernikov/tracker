@@ -14,4 +14,6 @@ public interface Store {
     List<Item> findByName(String key);
 
     Item findById(int id);
+
+    boolean deleteAll();
 }

@@ -18,6 +18,12 @@ public class MemTracker implements Store {
         return index == -1 ? null : items.get(index);
     }
 
+    @Override
+    public boolean deleteAll() {
+        items.removeAll(List.copyOf(items));
+        return items.isEmpty();
+    }
+
     public List<Item> findAll() {
         return List.copyOf(items);
     }
