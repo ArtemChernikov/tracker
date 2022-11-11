@@ -14,6 +14,16 @@
 4. Отображать список всех заявок.
 5. Производить поиск по имени заявки.
 
+## Технологии.
+- Java 17
+- PostgreSql
+- JDBC
+- Quartz-Scheduler
+- Jsoup
+- Log4j + slf4j
+- Maven
+- Git
+
 ## Сборка и запуск<br>
 для сборки `mvn install`<br>
 для запуска`java -jar target/tracker.jar`
