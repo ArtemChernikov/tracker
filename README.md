@@ -25,8 +25,8 @@
 - Git
 
 ## Сборка и запуск<br>
-для сборки `mvn install`<br>
-для запуска`java -jar target/tracker.jar`
+- для сборки `mvn install`<br>
+- для запуска`java -jar target/tracker.jar`
 
 ## Как использовать<br>
 Использовать для создания, удаления и прочих взаимодействий с заявками
