@@ -21,6 +21,8 @@
 - Quartz-Scheduler
 - Jsoup
 - Log4j + slf4j
+- JUnit 5
+- Mockito
 - Maven
 - Git
 
