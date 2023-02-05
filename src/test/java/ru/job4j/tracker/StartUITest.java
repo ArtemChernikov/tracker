@@ -254,6 +254,7 @@ public class StartUITest {
         assertThat(out.toString(), is("=== Find item by id ===" + ln + "Заявка с введенным id: " + reqId + " не найдена." + ln));
         assertThat(tracker.findAll().get(0).getName(), is(addedItem.getName()));
     }
+
     @Test
     public void whenDeleteItemMockSuccess() {
         Output out = new StubOutput();
