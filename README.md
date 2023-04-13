@@ -24,6 +24,7 @@
 - JUnit 5
 - Mockito
 - Maven
+- Lombok
 - Git
 
 ## Сборка и запуск<br>
