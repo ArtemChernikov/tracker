@@ -17,6 +17,7 @@
 ## Инструменты
 - Java 17
 - PostgreSQL
+- Hibernate 5.6
 - JDBC
 - Quartz-Scheduler
 - Jsoup
