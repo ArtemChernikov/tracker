@@ -25,8 +25,16 @@ public class HbmRun {
             User user = new User();
             user.setName("Admin Admin");
             user.setRole(role);
+            user.setMessengers(List.of(
+                    new UserMessenger(0, "tg", "@tg"),
+                    new UserMessenger(0, "wu", "@wu")
+            ));
             create(user, sessionFactory);
-            findAll(User.class, sessionFactory).forEach(System.out::println);
+            var stored = sessionFactory.openSession()
+                    .createQuery("from User where id = :fId", User.class)
+                    .setParameter("fId", user.getId())
+                    .getSingleResult();
+            stored.getMessengers().forEach(System.out::println);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
