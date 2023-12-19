@@ -12,7 +12,7 @@
         <property name="hibernate.current_session_context_class">thread</property>
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
-
+        
         <mapping class="ru.job4j.tracker.Item"/>
         <mapping class="ru.job4j.toone.Role"/>
         <mapping class="ru.job4j.toone.User"/>
