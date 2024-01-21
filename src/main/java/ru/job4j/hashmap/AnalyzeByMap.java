@@ -71,9 +71,8 @@ public class AnalyzeByMap {
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
                 String subjectName = subject.name();
-                int subjectScore = subject.score();
-                map.computeIfPresent(subjectName, (key, value) -> value + subjectScore);
-                map.putIfAbsent(subjectName, subjectScore);
+                Integer oldScore = map.getOrDefault(subjectName, 0);
+                map.put(subjectName, oldScore + subject.score());
             }
         }
         return map;
