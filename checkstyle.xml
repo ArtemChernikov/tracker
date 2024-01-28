@@ -157,16 +157,18 @@
 			<property name="severity" value="ignore"/>
 			<metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
 		</module>
-<!--		<module name="CustomImportOrder">-->
-<!--			<property name="customImportOrderRules" value="STATIC###STANDARD_JAVA_PACKAGE###SPECIAL_IMPORTS###THIRD_PARTY_PACKAGE"/>-->
-<!--			<property name="standardPackageRegExp" value="^java\."/>-->
-<!--			<property name="specialImportsRegExp" value="^javax\."/>-->
-<!--			<property name="thirdPartyPackageRegExp" value="^org\."/>-->
-<!--			<property name="sortImportsInGroupAlphabetically" value="true"/>-->
-<!--			<property name="separateLineBetweenGroups" value="true"/>-->
-<!--		</module>-->
+		<!--		<module name="CustomImportOrder">-->
+		<!--			<property name="customImportOrderRules" value="STATIC###STANDARD_JAVA_PACKAGE###SPECIAL_IMPORTS###THIRD_PARTY_PACKAGE"/>-->
+		<!--			<property name="standardPackageRegExp" value="^java\."/>-->
+		<!--			<property name="specialImportsRegExp" value="^javax\."/>-->
+		<!--			<property name="thirdPartyPackageRegExp" value="^org\."/>-->
+		<!--			<property name="sortImportsInGroupAlphabetically" value="true"/>-->
+		<!--			<property name="separateLineBetweenGroups" value="true"/>-->
+		<!--		</module>-->
+
 		<module name="UnusedImports"/>
 		<module name="MethodParamPad"/>
+		<module name="WhitespaceAfter"/>
 		<module name="NoWhitespaceBefore">
 			<property name="allowLineBreaks" value="true"/>
 			<property name="tokens" value="COMMA, SEMI, POST_INC, POST_DEC, DOT, ELLIPSIS, METHOD_REF"/>
