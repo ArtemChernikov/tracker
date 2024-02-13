@@ -25,11 +25,10 @@ public class AnalyzeByMap {
         for (Pupil pupil : pupils) {
             int sum = 0;
             List<Subject> subjects = pupil.subjects();
-            int size = subjects.size();
             for (Subject subject : subjects) {
                 sum += subject.score();
             }
-            double averageScore = sum / size;
+            double averageScore = sum / subjects.size();
             labels.add(new Label(pupil.name(), averageScore));
         }
         return labels;
